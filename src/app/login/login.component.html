@@ -1,0 +1,16 @@
+<div class="div1">
+    <form (ngSubmit)="login()" #singInForm = 'ngForm' >
+        <div>
+            <label for="user"> Username </label>
+            <input type="text" #userInput = "ngModel"  name="usernaame" id="user" [(ngModel)]="client.user" required >    
+        </div>
+        <div *ngIf="userInput.invalid && userInput.touched" class="text-danger">
+            Please enter your Username
+        </div>
+        <div>
+            <label  for="pwd"> Password </label>
+            <input type="password" #pwdInput = "ngModel"  name="password" id="pwd" [(ngModel)]="client.pwd"  required >
+        </div>
+        <button class="btn" type="submit" [disabled]="singInForm.form.invalid" > Log in </button>
+    </form>
+</div>

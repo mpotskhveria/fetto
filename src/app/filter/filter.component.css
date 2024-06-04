@@ -1,0 +1,17 @@
+.filter {
+    width: 800px;
+    margin: 40px  auto 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.filterbox {
+    background-color: aqua;
+}
+
+.div1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

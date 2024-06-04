@@ -1,0 +1,31 @@
+.div1 {
+    width: fit-content;
+    margin: auto;
+}
+
+form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    border-radius: 15px;
+}
+
+form div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    background-color: aqua;
+}
+
+.btn:active {
+    transform: scale(0.9);
+}
+

@@ -1,0 +1,17 @@
+
+<section id="section1">
+    <fet-filter (onSelect)="parentFilter($event)"></fet-filter>
+</section>
+
+<!-- <fet-login></fet-login> -->
+<fet-register></fet-register>
+
+<section id="section2">
+    <fet-catalog [saqoneli]="products" [selected]="selectedChange" #catalog ></fet-catalog>
+</section>
+
+<section id="section3">
+    <fet-allproducts></fet-allproducts>
+</section>
+
+

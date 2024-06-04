@@ -1,0 +1,45 @@
+
+
+<div class="catalog">
+    <ul class="list">
+        <ng-container *ngFor="let product of saqoneli">
+            <li *ngIf="selected === 'all' || selected === product.category" 
+            [ngStyle]="{backgroundColor: product.rating > 4.3 ? 'lightgreen' : 'tomato'}">   
+                <div class="imgbox" fetListen  [ngClass]="{test: selected === product.category}" 
+                [routerLink]="'/info/'+product.id">
+                    <img [src]="product.thumbnail" [alt]="product.title">
+                </div>
+                <div class="idbox"  painter>
+                    <div class="id">Product ID:</div>
+                    <div class="idvalue"> {{ product.id | number}} </div>
+                </div>
+                <div class="namebox" fetBind (click)="testSvc()">
+                    <div class="name">Product name:</div>
+                    <div class="namevalue"> {{product.title | lowercase | uppercase}} </div>
+                </div>
+                <div class="descbox">
+                    <div class="description">About Product:</div>
+                    <div class="descvalue"> {{ product.category}} </div>
+                </div>
+                <div>
+                    {{product.rating | percentage: total : 2}}
+                </div>
+                <div class="pricebox">
+                    <div class="price">Price:</div>
+                    <div class="pricevalue"> {{product.price | currency: '₾' }} </div>
+                    <div> {{testDate | date: 'mediumDate'}} </div>
+                </div>
+                <div class="btn" *ngIf=" product.stock > 50; else request ">
+                    Buy
+                </div>
+                <ng-template #request>
+                    <input type="text" #textOrder>
+                    <div class="btn" (click)="loger1()" >
+                       Place an Order
+                    </div>
+                </ng-template>   
+                <p> {{observable$ | async}} </p>
+            </li>
+        </ng-container>
+    </ul>
+</div>

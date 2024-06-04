@@ -1,0 +1,18 @@
+
+<div class="div1">
+    <form  [formGroup]="myform" (ngSubmit)="test()" >
+        <div>
+            <label for="fname"> Firstname </label>
+            <input type="text" name="firstname" id="fname"  formControlName = 'firstname' >    
+        </div>
+        <div>
+            <label  for="lname"> Lastname </label>
+            <input type="text" name="lastname" id="lname" formControlName = 'lastname'  >
+        </div>
+        <div>
+            <label  for="age"> Your Age </label>
+            <input type="number" name="age" id="age" formControlName = 'age'  >
+        </div>
+        <button class="btn" type="submit"> Log in </button>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+<p>info works!</p>
+
+
+<div class="catalog">
+    <ul class="list">
+        <li >   
+            <div class="imgbox" fetListen >
+                <img [src]="imager(product)" [alt]="product.name">
+            </div>
+            <div class="idbox"  painter>
+                <div class="id">Product ID:</div>
+                <div class="idvalue"> {{ product.id }} </div>
+            </div>
+            <div class="namebox" fetBind >
+                <div class="name">Product name:</div>
+                <div class="namevalue"> {{product.name}} </div>
+            </div>
+            <div class="descbox">
+                <div class="description">About Product:</div>
+                <div class="descvalue"> {{ product.category}} </div>
+            </div>
+            <div class="pricebox">
+                <div class="price">Price:</div>
+                <div class="pricevalue"> {{product.price}} </div>
+            </div>
+            <div class="btn" *ngIf=" product.available; else request ">
+                Buy
+            </div>
+            <ng-template #request>
+                <input type="text" #textOrder>
+                <div class="btn">
+                    Place an Order
+                </div>
+            </ng-template>   
+        </li>
+    </ul>
+</div>
+
+<button [routerLink]="'/info/'+(product.id - 1)" > Previous </button>
+<button [routerLink]="'/info/'+(product.id + 1)" > Next </button>
